@@ -24,12 +24,12 @@ public class A1Novice {
 			lastName[i] = scan.next();
 			int totalItems = scan.nextInt();
 		
-			double sum = 0;
+			double sum = 0.0;
 			for (int j = 0; j < totalItems; j++) {
-				int amount = scan.nextInt();
-				
-				double price = scan.nextDouble();
-				sum = (amount * price) + sum;
+				int amountOfItem = scan.nextInt();
+				scan.next();
+				double priceOfItem = scan.nextDouble();
+				sum += amountOfItem * priceOfItem;
 			}
 			totalCost[i] = sum;
 			System.out.println(firstInitial[i] + ". " + lastName[i] + ": " + String.format("%.2f", totalCost[i]));
