@@ -47,10 +47,18 @@ public class A1Adept {
 			}
 	
 	}
+	double max = 0;
+	double min = 1000000000;
+	double sum = 0;
 	for (int i = 0; i < totalSpent.length; i++) {
-		totalSpent[i] = scan.nextDouble();
+		if (totalSpent[i] > max) {
+			max = totalSpent[i];
+		} else if (totalSpent[i] < min) {
+			min = totalSpent[i];
+		}
+		sum += totalSpent[i];
 	}
-	scan.close();
+	
 	double sum = calculateValueSum(totalSpent);
 	double min = findValueMin(totalSpent);
 	double max = findValueMax(totalSpent);
@@ -59,8 +67,13 @@ public class A1Adept {
 	System.out.println("Smallest: " + max);
 	System.out.println("Average: " + String.format("%.2f", ((double) sum) / ((double) count)));
 	
-	
+	scan.close();
 	}
+	
+	
+	
+	
+	
 	static double calculateValueSum(double[] vals) {
 		
 		int sum = 0;
