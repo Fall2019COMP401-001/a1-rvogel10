@@ -1,7 +1,7 @@
 package a1;
 
 import java.util.Scanner;
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class A1Jedi {
 
@@ -50,7 +50,7 @@ public class A1Jedi {
 				}
 			
 			}
-			System.out.println(Arrays.toString(purchasedItems));
+			// System.out.println(Arrays.toString(purchasedItems));
 			int[] rep = new int[numberOfItems];
 			for (int s = 0; s < purchasedItems.length; s++) {
 				for (int f = s + 1; f < purchasedItems.length; f++) {
@@ -64,7 +64,7 @@ public class A1Jedi {
 			}
 			
 			
-			System.out.println(Arrays.toString(rep));
+			// System.out.println(Arrays.toString(rep));
 			for (int q = 0; q < purchasedItems.length; q++) {
 				for (int v = 0; v < items.length; v++) {
 					if (purchasedItems[q].equals(items[v])) {
