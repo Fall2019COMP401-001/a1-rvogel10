@@ -48,8 +48,8 @@ public class A1Adept {
 			// System.out.println(Arrays.toString(totalSpent));
 	
 	}
-	double max = 0;
-	double min = 1000000000;
+	double max = Integer.MIN_VALUE;
+	double min = Integer.MAX_VALUE;
 	double sum = 0;
 	String maxName = "";
 	String minName = "";
@@ -58,7 +58,8 @@ public class A1Adept {
 		if (totalSpent[i] > max) {
 			max = totalSpent[i];
 			maxName = firstNames[i] + " " + lastNames[i];
-		} else if (totalSpent[i] < min) {
+		}
+		if (totalSpent[i] < min) {
 			min = totalSpent[i];
 			minName = firstNames[i] + " " + lastNames[i];
 		}
