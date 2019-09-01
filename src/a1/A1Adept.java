@@ -1,6 +1,7 @@
 package a1;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class A1Adept {
 
@@ -12,12 +13,11 @@ public class A1Adept {
 		// Arrays for items and their prices
 		int count = scan.nextInt();
 		String[] items = new String[count];
-		double[] itemAmount = new double[count];
+		double[] itemPrice = new double[count];
 		for (int i = 0; i < count; i++) {
 			items[i] = scan.next();
-			itemAmount[i] = scan.nextDouble();
+			itemPrice[i] = scan.nextDouble();
 		}
-		
 		
 		// Array for counting the people
 		int count2 = scan.nextInt();
@@ -39,32 +39,37 @@ public class A1Adept {
 			
 			for (int x = 0; x < totalDifferentItems; x++) {
 				for (int y = 0; y < count; y++) {
-					if (itemsPurchased[x] == items[y]) {
-						totalSpent[x] += itemAmount[y] * amountOfEachItem[x];
+					if (itemsPurchased[x] .equals(items[y])) {
+						totalSpent[i] += itemPrice[y] * amountOfEachItem[x];
 					}
 				}
 				
 			}
+			// System.out.println(Arrays.toString(totalSpent));
 	
 	}
 	double max = 0;
 	double min = 1000000000;
 	double sum = 0;
+	String maxName = "";
+	String minName = "";
 	
 	for (int i = 0; i < totalSpent.length; i++) {
 		if (totalSpent[i] > max) {
 			max = totalSpent[i];
+			maxName = firstNames[i] + " " + lastNames[i];
 		} else if (totalSpent[i] < min) {
 			min = totalSpent[i];
+			minName = firstNames[i] + " " + lastNames[i];
 		}
 		sum += totalSpent[i];
 	}
 	
 	
 	
-	System.out.println("Biggest: " + min);
-	System.out.println("Smallest: " + max);
-	System.out.println("Average: " + String.format("%.2f", ((double) sum) / ((double) count)));
+	System.out.println("Biggest: " + maxName + " (" + + max + ")");
+	System.out.println("Smallest: " + minName + " (" + + min + ")");
+	System.out.println("Average: " + String.format("%.2f", ((double) sum) / ((int) totalSpent.length)));
 	
 	scan.close();
 	}
