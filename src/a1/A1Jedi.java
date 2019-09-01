@@ -58,9 +58,9 @@ public class A1Jedi {
 						rep[s] = 1;
 					}
 				}
-			if (rep[s] == purchasedItems.length - 1) {
-				rep[s]--;
-			 }
+			// if (rep[s] == purchasedItems.length - 1) {
+			// 	rep[s]--;
+			//  }
 			}
 			
 			
