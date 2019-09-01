@@ -34,7 +34,7 @@ public class A1Novice {
 			totalCost[i] = sum;
 			System.out.println(firstInitial[i] + ". " + lastName[i] + ": " + String.format("%.2f", totalCost[i]));
 		}
-		
+		scan.close();
 		
 	}
 	
