@@ -50,6 +50,7 @@ public class A1Adept {
 	double max = 0;
 	double min = 1000000000;
 	double sum = 0;
+	
 	for (int i = 0; i < totalSpent.length; i++) {
 		if (totalSpent[i] > max) {
 			max = totalSpent[i];
@@ -59,9 +60,7 @@ public class A1Adept {
 		sum += totalSpent[i];
 	}
 	
-	double sum = calculateValueSum(totalSpent);
-	double min = findValueMin(totalSpent);
-	double max = findValueMax(totalSpent);
+	
 	
 	System.out.println("Biggest: " + min);
 	System.out.println("Smallest: " + max);
@@ -69,52 +68,5 @@ public class A1Adept {
 	
 	scan.close();
 	}
-	
-	
-	
-	
-	
-	static double calculateValueSum(double[] vals) {
-		
-		int sum = 0;
-		
-		for (int i=0; i<vals.length; i++) {
-			sum += vals[i];
-		}
-		
-		return sum;
-	}
-	static double findValueMin(double[] vals) {
-		
-		// Initialize current minimum to first value in array.
-		double cur_min = vals[0];
-		
-		// Starting with second value (if any), compare each value
-		// in array with current minimum and replace if smaller.
-		
-		for (int i=1; i < vals.length; i++) {
-			if (vals[i] < cur_min) {
-				cur_min = vals[i];
-			}
-		}
-		
-		return cur_min;
-	}
-	static double findValueMax(double[] vals) {
-		
-		// Initialize current minimum to first value in array.
-		double cur_max = vals[0];
-		
-		// Starting with second value (if any), compare each value
-		// in array with current minimum and replace if smaller.
-		
-		for (int i=1; i < vals.length; i++) {
-			if (vals[i] > cur_max) {
-				cur_max = vals[i];
-			}
-		}
-		
-		return cur_max;
-	}
-
 }
+	
