@@ -1,6 +1,7 @@
 package a1;
 
 import java.util.Scanner;
+// import java.util.Arrays;
 
 public class A1Jedi {
 
@@ -22,25 +23,57 @@ public class A1Jedi {
 		}
 		int numberOfPeople = scan.nextInt();
 		for (int i = 0; i < numberOfPeople; i++) {
+			
 			scan.next();
 			scan.next();
 			int numberOfItems = scan.nextInt();
+			
+			String[] purchasedItems = new String[numberOfItems];
 			for (int x = 0; x < numberOfItems; x++) {
 				int numberOfEachItem = scan.nextInt();
 				String itemName = scan.next();
-				for (int j = 0; j < numberOfEachItem; j++) {
-					for (int y = 0; y < count; y++) {
-						if (itemName .equals(items[y])) {
-							amountOfEachItem[y]++;
-							if (j == numberOfEachItem - 1) {
-								numberOfCustomersWhoBought[y]++;
-							}
-							break;
+				purchasedItems[x] = itemName;
+				
+				
+				// For loop for seeing if it is the first item of that kind that was purchased
+				
+				for (int j = 0; j < items.length; j++) {
+
+						if (itemName.equals(items[j])) {
+							amountOfEachItem[j] += numberOfEachItem;
+							numberOfCustomersWhoBought[j]++;
+							// break;
 						}
+					
+					
+				
+				}
+			
+			}
+			// System.out.println(Arrays.toString(purchasedItems));
+			int[] rep = new int[numberOfItems];
+			for (int s = 0; s < purchasedItems.length; s++) {
+				for (int f = s + 1; f < purchasedItems.length; f++) {
+					if (purchasedItems[s].equals(purchasedItems[f])) {
+						rep[s] = 600;
 					}
 				}
+			if (rep[s] == purchasedItems.length - 1) {
+				rep[s]--;
 			}
-		}
+			}
+			
+			
+			// System.out.println(Arrays.toString(rep));
+			for (int q = 0; q < purchasedItems.length; q++) {
+				for (int v = 0; v < items.length; v++) {
+					if (purchasedItems[q].equals(items[v])) {
+						numberOfCustomersWhoBought[v] = numberOfCustomersWhoBought[v] - rep[q];
+					}
+				}
+			
+			}	
+		}	
 		for (int z = 0; z < items.length; z++) {
 			if (amountOfEachItem[z] == 0 | numberOfCustomersWhoBought[z] == 0) {
 				System.out.println("No customers bought " + items[z]);
@@ -48,6 +81,9 @@ public class A1Jedi {
 				System.out.println(numberOfCustomersWhoBought[z] + " customers bought " + amountOfEachItem[z] + " " + items[z]);
 			}
 		}
-		scan.close();
+		
+	
+		scan.close();	
 	}
-	}
+}
+
